@@ -1,7 +1,7 @@
 from http.server import BaseHTTPRequestHandler
 import urlparse
 
-import audioldm
+#import audioldm
  
 class handler(BaseHTTPRequestHandler):
  
@@ -11,5 +11,5 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        self.wfile.write(f'{q.get("q")}}'.encode('utf-8'))
+        self.wfile.write(f'{q.get("q")}'.encode('utf-8'))
         return
