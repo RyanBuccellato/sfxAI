@@ -11,5 +11,6 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        self.wfile.write(f'{q.get("q")}'.encode('utf-8'))
+        q = query_params.get("q", [""])[0]
+        self.wfile.write(q.encode('utf-8'))
         return
